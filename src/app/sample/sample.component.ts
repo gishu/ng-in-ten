@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SampleService } from '../sample.service';
 
 @Component({
   selector: 'app-sample',
@@ -8,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class SampleComponent implements OnInit {
 
   title: String = "Sample title";
-  samples = ['Sample1', 'Sample2', 'Sample3']
-  constructor() { 
+  samples;
+  constructor(private _sampleService:SampleService) { 
     
   }
 
   ngOnInit() {
+    // load from a rest call for example
+    this.samples = this._sampleService.getSamplesFromAfar();
   }
 
 }
