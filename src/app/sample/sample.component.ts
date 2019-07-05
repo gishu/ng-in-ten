@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SampleComponent implements OnInit {
 
-  constructor() { }
+  title: String = "Sample title";
+  samples = ['Sample1', 'Sample2', 'Sample3']
+  constructor() { 
+    
+  }
 
   ngOnInit() {
   }
