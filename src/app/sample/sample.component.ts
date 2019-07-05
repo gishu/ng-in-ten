@@ -19,4 +19,8 @@ export class SampleComponent implements OnInit {
     this.samples = this._sampleService.getSamplesFromAfar();
   }
 
+  handleSave($event){
+    console.log($event);
+  }
+
 }
