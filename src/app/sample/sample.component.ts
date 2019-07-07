@@ -10,6 +10,8 @@ export class SampleComponent implements OnInit {
 
   title: String = "Sample title";
   samples;
+
+  compVar: String = "initial value";
   constructor(private _sampleService:SampleService) { 
     
   }
@@ -28,5 +30,8 @@ export class SampleComponent implements OnInit {
   }
   onTemplateTextEnter(value){
     console.log('Template var value =' + value);
+  }
+  logTwoWayBoundVar(){
+    console.log(this.compVar);
   }
 }

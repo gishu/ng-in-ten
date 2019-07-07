@@ -7,7 +7,14 @@
 <ul>
     <li *ngFor="let sample of samples">Sample=>{{sample}}</li>
 </ul>
+<button (click)="handleSave($event)">Event bind - Check Console</button>
 <input type="text" (keyup.enter)="onTextEnter($event)">
 <input #templateVar type="text" (keyup.enter)="onTemplateTextEnter(templateVar.value)">
-<button (click)="handleSave($event)">Console log</button>
+<div>
+    <p>TwoWay binding</p>
+    <input type="text" [(ngModel)]="compVar">
+    <button (click)="logTwoWayBoundVar()">Log 2-way bound var</button>
+</div>
+
+
 
