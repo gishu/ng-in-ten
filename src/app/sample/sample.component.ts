@@ -23,4 +23,10 @@ export class SampleComponent implements OnInit {
     console.log($event);
   }
 
+  onTextEnter($event){
+    console.log('Text value =' + $event.target.value);
+  }
+  onTemplateTextEnter(value){
+    console.log('Template var value =' + value);
+  }
 }
