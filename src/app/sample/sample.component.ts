@@ -12,6 +12,12 @@ export class SampleComponent implements OnInit {
   samples;
 
   compVar: String = "initial value";
+  
+  course = {
+    rating: 4.9745,
+    title: "This is a very long loong looooonnggg course"
+  }
+  
   constructor(private _sampleService:SampleService) { 
     
   }

@@ -16,5 +16,11 @@
     <button (click)="logTwoWayBoundVar()">Log 2-way bound var</button>
 </div>
 
+<p>
+    Pipes
+    {{course.rating | number:"2.2-3"}}
+    <br/>
+    {{course.title | summary:10}}
+</p>
 
 
