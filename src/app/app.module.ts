@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SampleComponent } from './sample/sample.component';
 import { SummaryPipe } from './summary.pipe';
+import { LikesComponent } from './likes/likes.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SampleComponent,
-    SummaryPipe
+    SummaryPipe,
+    LikesComponent
   ],
   imports: [
     BrowserModule,
