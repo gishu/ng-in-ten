@@ -3,7 +3,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-likes',
   templateUrl: './likes.component.html',
-  styleUrls: ['./likes.component.css']
+  styleUrls: ['./likes.component.css'],
+  styles:[
+    `
+    .press {
+      color: white;
+  }
+  
+  button {
+      background-color: darkgrey;
+  }
+      `
+  ]
+  
+  
 })
 export class LikesComponent implements OnInit {
 
