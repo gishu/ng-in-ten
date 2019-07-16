@@ -1,4 +1,7 @@
 <app-sample></app-sample>
-<app-likes likeCount="10" (likedByUser)="onLike($event)"></app-likes>
+<app-likes likeCount="10" (likedByUser)="onLike($event)">
+    <div class="header">Header content</div>
+    <div class="footer">Footer content</div>
+</app-likes>
 
 <router-outlet></router-outlet>
