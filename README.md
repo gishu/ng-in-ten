@@ -17,3 +17,7 @@ styleUrls: ['filepath1'],
 styles: [ `inline style1 `]
 
 Only the last style direction is applied. Here styles from the filepath would be ignored. styleUrls seems to take precedence on inline variants.
+
+#Directives
+- structural directives are prefixed with *
+- hidden vs *ngIf: hidden elements are invisible but exist in DOM

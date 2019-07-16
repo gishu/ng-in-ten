@@ -1,0 +1,10 @@
+<div class="main">
+    <h3>DirectivesDemo</h3>
+    <div *ngIf='directives.length > 0; then hasDir else noDir'>
+
+    </div>
+
+    <ng-template #hasDir>{{directives}}</ng-template>
+    <ng-template #noDir>No directives yet!</ng-template>
+    <div [hidden]="directives.length > 0">Why No courses?</div>
+</div>
