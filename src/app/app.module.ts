@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { SampleComponent } from './sample/sample.component';
 import { SummaryPipe } from './summary.pipe';
 import { TemplateFormsComponent } from './forms/template-forms/template-forms.component';
+import { LikesComponent } from './likes/likes.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { TemplateFormsComponent } from './forms/template-forms/template-forms.co
     AppComponent,
     SampleComponent,
     SummaryPipe,
-    TemplateFormsComponent
+    TemplateFormsComponent,
+    LikesComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
