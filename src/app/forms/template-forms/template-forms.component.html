@@ -6,34 +6,47 @@
   <li class="nav-item"><a href="#" class="nav-link active">Page2</a></li>
 </ul>
 
-<form action="">
+<form action="" #theForm="ngForm" (ngSubmit)="onSubmit(theForm)">
   <div class="form-group">
-    <label for="field.stock">Stock </label>
+    <label for="stock">Stock</label>
+    <select ngModel name="stock" required id="stock" class="form-control">
+      <option *ngFor="let code of stockCodes" [value]="code">{{ code }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="qty">Quantity</label>
     <input
-      type="text"
-      id="field.stock"
-      class="form-control"
-      placeholder="NSE/BSE code"
-      ngModel
-      #fStock="ngModel"
-      (change)="log(fStock)"
-      name="field.stock"
+      type="number"
       required
-      minlength="5"
+      min="0"
+      ngModel
+      name="qty"
+      #fQty="ngModel"
+      (change)="log(fQty)"
+      id="qty"
+      class="form-control"
     />
     <div
       class="alert alert-danger"
-      *ngIf="fStock.touched && !fStock.valid && fStock.control.errors.required"
+      *ngIf="fQty.touched && !fQty.valid && fQty.control.errors.required"
     >
-      Stock is required
-    </div>
-    <div
-      class="alert alert-warning"
-      *ngIf="fStock.touched && !fStock.valid && fStock.control.errors.minlength"
-    >
-      Stock should be of min
-      {{ fStock.control.errors.minlength.requiredLength }} chars
+      Quantity of stocks traded is mandatory
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Submit</button>
+
+  <div class="form-group">
+    <label for="description">Description </label>
+    <input
+      type="text"
+      id="description"
+      class="form-control"
+      placeholder="Enter a description"
+      ngModel
+      name="desc"
+    />
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!theForm.valid">
+    Submit
+  </button>
 </form>
+<div>Debug:{{ theForm.form.value | json }}</div>

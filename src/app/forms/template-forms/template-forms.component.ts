@@ -6,11 +6,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./template-forms.component.css"]
 })
 export class TemplateFormsComponent implements OnInit {
+
+  stockCodes = [ 'BAJFIN', 'NOCIL', 'DMART'];
   constructor() {}
 
   ngOnInit() {}
 
   log(x) {
     console.log(x);
+  }
+
+  onSubmit(f){
+    console.log(f);
   }
 }
