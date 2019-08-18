@@ -19,8 +19,21 @@
       (change)="log(fStock)"
       name="field.stock"
       required
+      minlength="5"
     />
-    <div class="alert alert-danger" *ngIf="fStock.touched && !fStock.valid">Stock is required</div>
+    <div
+      class="alert alert-danger"
+      *ngIf="fStock.touched && !fStock.valid && fStock.control.errors.required"
+    >
+      Stock is required
+    </div>
+    <div
+      class="alert alert-warning"
+      *ngIf="fStock.touched && !fStock.valid && fStock.control.errors.minlength"
+    >
+      Stock should be of min
+      {{ fStock.control.errors.minlength.requiredLength }} chars
+    </div>
   </div>
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>
