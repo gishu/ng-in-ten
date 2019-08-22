@@ -1,0 +1,40 @@
+<h3>Reactive Forms</h3>
+
+<form action="" [formGroup]="rform" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="stock">Stock</label>
+    <select formControlName="stock" id="stock" class="form-control">
+      <option *ngFor="let code of stockCodes" [value]="code">{{ code }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="qty">Quantity</label>
+    <input
+      type="number"
+      formControlName="qty"
+      id="qty"
+      class="form-control"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="fQty.touched && fQty.invalid && fQty.errors.required"
+    >
+      Quantity of stocks traded is mandatory
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description </label>
+    <input
+      type="text"
+      id="description"
+      class="form-control"
+      placeholder="Enter a description"
+      formControlName="desc"
+      />
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!rform.valid">
+    Submit
+  </button>
+</form>
+<div>Debug:{{ rform.value | json }}</div>
