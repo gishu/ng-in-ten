@@ -32,6 +32,9 @@
       placeholder="Enter a description"
       formControlName="desc"
       />
+      <div class="alert alert-danger" *ngIf="fDesc.touched && fDesc.invalid">
+          <div *ngIf="fDesc.errors.equals42">{{fDesc.errors.equals42 | json}}</div>
+      </div>
   </div>
   <button class="btn btn-primary" type="submit" [disabled]="!rform.valid">
     Submit
