@@ -9,17 +9,13 @@
   </div>
   <div class="form-group">
     <label for="qty">Quantity</label>
-    <input
-      type="number"
-      formControlName="qty"
-      id="qty"
-      class="form-control"
-    />
-    <div
-      class="alert alert-danger"
-      *ngIf="fQty.touched && fQty.invalid && fQty.errors.required"
-    >
-      Quantity of stocks traded is mandatory
+    <input type="number" formControlName="qty" id="qty" class="form-control" />
+    <div class="alert alert-info" *ngIf="fQty.pending">Evaluating checks on qty</div>
+    <div class="alert alert-danger" *ngIf="fQty.touched && fQty.invalid">
+      <div *ngIf="fQty.errors.required">
+        Quantity of stocks traded is mandatory
+      </div>
+      <div *ngIf="fQty.errors.positive">Quantity must be positive</div>
     </div>
   </div>
 
@@ -31,10 +27,12 @@
       class="form-control"
       placeholder="Enter a description"
       formControlName="desc"
-      />
-      <div class="alert alert-danger" *ngIf="fDesc.touched && fDesc.invalid">
-          <div *ngIf="fDesc.errors.equals42">{{fDesc.errors.equals42 | json}}</div>
+    />
+    <div class="alert alert-danger" *ngIf="fDesc.touched && fDesc.invalid">
+      <div *ngIf="fDesc.errors.equals42">
+        {{ fDesc.errors.equals42 | json }}
       </div>
+    </div>
   </div>
   <button class="btn btn-primary" type="submit" [disabled]="!rform.valid">
     Submit

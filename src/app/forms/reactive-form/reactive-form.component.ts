@@ -12,7 +12,7 @@ export class ReactiveFormComponent implements OnInit {
 
   rform = new FormGroup({
     stock: new FormControl(),
-    qty: new FormControl("", Validators.required),
+    qty: new FormControl("", Validators.required, MustBe.positive),
     desc: new FormControl("", MustBe.equals42)
   });
 
