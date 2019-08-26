@@ -1,0 +1,21 @@
+<h3>Dynamic Forms using FormBuilder</h3>
+
+<button class="primary" (click)="addAnotherAddress()">
+  Add another address
+</button>
+
+<div [formGroup]="dynamicForm">
+  <div
+    formArrayName="addresses"
+    *ngFor="let addr of addresses.controls; let i = index"
+  >
+    <div [formGroupName]="i" class="card" style="width:50rem">
+      <label>Address#{{ i }}</label>
+      <input type="text" class="form-control" formControlName="line1" />
+      <input type="text" class="form-control" formControlName="line2" />
+      <hr />
+    </div>
+  </div>
+</div>
+
+<p>{{ dynamicForm.value | json }}</p>

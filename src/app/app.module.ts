@@ -10,6 +10,7 @@ import { TemplateFormsComponent } from './forms/template-forms/template-forms.co
 import { LikesComponent } from './likes/likes.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { ReactiveFormDynamicComponent } from './forms/reactive-form-dynamic/reactive-form-dynamic.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
     TemplateFormsComponent,
     LikesComponent,
     DirectivesComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ReactiveFormDynamicComponent
   ],
   imports: [
     BrowserModule,
