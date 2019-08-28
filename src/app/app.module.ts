@@ -13,6 +13,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { ReactiveFormDynamicComponent } from './forms/reactive-form-dynamic/reactive-form-dynamic.component';
 import { HttpComponent } from './http/http.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { HttpComponent } from './http/http.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
