@@ -16,24 +16,20 @@ export class UserService {
   getUsers() {
     return this.http.get(this.url, { observe: 'response' })
       .pipe(
-        catchError(this.handleError('getusers'))
+        catchError(this.handleError)
       );
   }
 
-  // deleteUser(id) {
-  //   return this.http.delete(this.url + '/' + id, { observe: 'response' })
-  //     .pipe(
-  //       catchError(this.handleError('deleteUser'))
-  //     )
-  // }
+  private handleError(error: HttpErrorResponse) {
 
-  private handleError(operation: string) {
-    return err => {
-      console.error(err);
-      if (err instanceof HttpErrorResponse) {
-        console.log(err.status);
-      }
-      return throwError(new AppError(err))
+    if (error.error instanceof ErrorEvent) {
+      // client side / network error has occurred
+      console.log('Client side error ', error.error.message)
     }
+    else {
+      // backend error
+      console.log('Server returned error ', error.status, error.error);
+    }
+    return throwError(new AppError(error.error))
   }
 }
