@@ -17,10 +17,7 @@ export class HttpComponent implements OnInit {
       .subscribe(resp => {
         console.log(resp); // resp.status http status
         this.users = resp.body;
-      }, error => {
-        alert('unexpected error');
-        console.log(error);
-      })
+      });
 
   }
 
